@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto final · Cajero automático</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">← Volver al menú</a>
+    <h1>Reto final: Cajero automático</h1>
+    <p id="etiquetas">Validaciones · Variables · Condicionales · Ciclos anidados</p>
+  </header>
+
+  <main>
+    <section id="enunciado">
+      <h2>Enunciado</h2>
+      <p>Simular un cajero automático que permita consultar, depositar y retirar dinero durante una sesión.</p>
+      <ul>
+        <li>Ingresar el nombre del titular y el saldo inicial.</li>
+        <li>Registrar operaciones con <code>do...while</code>: 1 consultar · 2 depositar · 3 retirar · 4 salir (separadas por punto y coma; monto tras dos puntos).</li>
+        <li>Depósito: mayor que 0 y máximo $2.000.000. Retiro: mayor que 0, múltiplo de $10.000, sin superar el saldo y máximo 3 retiros exitosos.</li>
+        <li>Registrar cada operación en un historial y mostrar el resumen final al salir.</li>
+      </ul>
+      <p><strong>Restricción:</strong> no uses arreglos; el historial se construye en el DOM.</p>
+    </section>
+
+    <section id="controles">
+      <form id="formulario">
+        <label for="titularEntrada">Nombre del titular:</label>
+        <input type="text" id="titularEntrada" required>
+        <label for="saldoEntrada">Saldo inicial:</label>
+        <input type="number" id="saldoEntrada" min="0" step="any" required>
+        <label for="operacionesEntrada">Operaciones (ejemplo: 2:200000;3:150000;4):</label>
+        <textarea id="operacionesEntrada" rows="4" required></textarea>
+        <button type="submit">Iniciar sesión en el cajero</button>
+      </form>
+    </section>
+
+    <section id="resultado" aria-live="polite">
+      <h2>Resultados</h2>
+      <p id="mensaje">Aún no hay datos. Presiona el botón para comenzar.</p>
+      <ul id="historial"></ul>
+      <p>Titular: <strong id="titular">—</strong></p>
+      <p>Saldo final: <strong id="saldoFinal">—</strong></p>
+      <p>Total depositado: <strong id="totalDepositado">—</strong></p>
+      <p>Total retirado: <strong id="totalRetirado">—</strong></p>
+      <p>Operaciones exitosas: <strong id="operaciones">—</strong></p>
+    </section>
+  </main>
+
+  <script src="js/reto.js"></script>
+</body>
+</html>
